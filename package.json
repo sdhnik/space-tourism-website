@@ -1,0 +1,50 @@
+{
+  "name": "space-tourism-website",
+  "version": "1.0.0",
+  "description": "This project is to build out this multi-page space tourism website and get it looking as close to the design as possible.",
+  "main": "index.html",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdhnik/space-tourism-website.git"
+  },
+  "author": "sdhnik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdhnik/space-tourism-website/issues"
+  },
+  "homepage": "https://github.com/sdhnik/space-tourism-website#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "autoprefixer": "^10.4.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass": "^6.0.1",
+    "path": "^0.12.7",
+    "postcss-loader": "^6.2.1",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "preact": "^10.6.2",
+    "preact-cli": "^3.3.2",
+    "preact-compat": "^3.19.0",
+    "preact-router": "^3.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
