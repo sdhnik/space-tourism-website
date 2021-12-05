@@ -15,16 +15,6 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
-        test: /\.html$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          context: './src',
-          outputPath: '/',
-          publicPath: '/'
-        }
-      },
       {
         test: /\.jsx?/i,
         loader: 'babel-loader',
@@ -48,6 +38,10 @@ module.exports = {
     ]
   },
 
+  optimization: {
+    minimize: true,
+  },
+
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new MiniCssExtractPlugin({
@@ -57,6 +51,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/assets/', to: 'assets/' },
+        { from: 'src/data.json' },
         {
           from: "**/*.html",
           context: path.resolve(__dirname, "src"),
