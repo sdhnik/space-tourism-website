@@ -1,22 +1,25 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
 
+
 const Header = () => {
   return (
     <header className="header">
-      <Link href="/" className="header__logo"></Link>
+      <Link href="/" className="header__logo">
+        <img src='/assets/shared/logo.svg' alt="Logo" />
+      </Link>
       <ul>
         <li>
           <Link href="/" activeClassName="active">00 Home</Link>
         </li>
         <li>
-          <Link href="/destinations" activeClassName="active">01 Destination</Link>
+          <Link href="/destination.html" activeClassName="active">01 Destination</Link>
         </li>
         <li>
-          <Link href="/crew" activeClassName="active">02 Crew</Link>
+          <Link href="/crew.html" activeClassName="active">02 Crew</Link>
         </li>
         <li>
-          <Link href="/technology" activeClassName="active">03 Technology</Link>
+          <Link href="/technology.html" activeClassName="active">03 Technology</Link>
         </li>
       </ul>
     </header>

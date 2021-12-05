@@ -1,4 +1,3 @@
-import "preact/debug";
 import { h, render } from 'preact';
 import Router from 'preact-router';
 
@@ -13,9 +12,9 @@ render((
   <div>
     <Router>
       <Home path="/" />
-      <Destinations path="/destinations" />
-      <Crew path="/crew" />
-      <Technology path="/technology" />
+      <Destinations path="/destination.html" />
+      <Crew path="/crew.html" />
+      <Technology path="/technology.html" />
     </Router>
   </div>
-), document.querySelector('main'));
+), document.querySelector('#content'));

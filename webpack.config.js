@@ -1,17 +1,30 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: 'production',
   entry: {
-    'script.js': './src/script.js'
+    script: './src/script.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]',
+    filename: '[name].js',
+    publicPath: '/',
   },
   module: {
     rules: [
+      { 
+        test: /\.html$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          context: './src',
+          outputPath: '/',
+          publicPath: '/'
+        }
+      },
       {
         test: /\.jsx?/i,
         loader: 'babel-loader',
@@ -26,7 +39,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
           "sass-loader",
@@ -36,7 +49,20 @@ module.exports = {
   },
 
   plugins: [
-    new MiniCssExtractPlugin()
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+      chunkFilename: '[id].[chunkhash].css'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/assets/', to: 'assets/' },
+        {
+          from: "**/*.html",
+          context: path.resolve(__dirname, "src"),
+        },
+      ],
+    }),
   ],
 
   resolve: {
@@ -48,8 +74,12 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.join(__dirname, 'src'),
+      directory: path.join(__dirname, 'dist'),
+    },
+    devMiddleware: {
+      writeToDisk: true,
     },
     compress: true,
+    open: true,
   }
 }
