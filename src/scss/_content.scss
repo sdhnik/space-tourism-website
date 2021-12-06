@@ -1,0 +1,13 @@
+.home {
+  background: url('../assets/home/background-home-desktop.jpg') center center no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+  .header__nav {
+    @supports (not (backdrop-filter: blur(81.5px))) {
+      background-image: url('../assets/home/background-home-desktop.jpg');
+    }
+  }
+}

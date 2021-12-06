@@ -1,24 +1,34 @@
 import { h } from 'preact';
+import { useState } from 'preact/hooks';
 import { Link } from 'preact-router/match';
 
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
   return (
     <header className="header">
       <Link href="/" className="header__logo">
         <img src='/assets/shared/logo.svg' alt="Logo" />
       </Link>
-      <ul>
-        <li>
+      <button 
+        className={`header__toggle${open ? ` open` : ``}`}
+        onClick={() => setOpen(!open)}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <ul className={`header__nav${open ? ` open` : ``}`}>
+        <li className="header__nav__item">
           <Link href="/" activeClassName="active">00 Home</Link>
         </li>
-        <li>
+        <li className="header__nav__item">
           <Link href="/destination.html" activeClassName="active">01 Destination</Link>
         </li>
-        <li>
+        <li className="header__nav__item">
           <Link href="/crew.html" activeClassName="active">02 Crew</Link>
         </li>
-        <li>
+        <li className="header__nav__item">
           <Link href="/technology.html" activeClassName="active">03 Technology</Link>
         </li>
       </ul>
