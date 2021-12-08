@@ -129,6 +129,20 @@ h5,
   text-transform: uppercase;
 } 
 
+.section__title {
+  color: white;
+  text-align: center;
+
+  @media(min-width: $tablet) {
+    text-align: left;
+  }
+
+  span {
+    font-weight: 700;
+    color: rgba(white, 0.25);
+  }
+}
+
 a {
   color: $color-light-blue;
   text-decoration: none;

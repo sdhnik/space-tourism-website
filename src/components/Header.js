@@ -20,16 +20,16 @@ const Header = () => {
       </button>
       <ul className={`header__nav${open ? ` open` : ``}`}>
         <li className="header__nav__item">
-          <Link href="/" activeClassName="active">00 Home</Link>
+          <Link href="/" activeClassName="active">Home</Link>
         </li>
         <li className="header__nav__item">
-          <Link href="/destination.html" activeClassName="active">01 Destination</Link>
+          <Link href="/destination.html" activeClassName="active">Destination</Link>
         </li>
         <li className="header__nav__item">
-          <Link href="/crew.html" activeClassName="active">02 Crew</Link>
+          <Link href="/crew.html" activeClassName="active">Crew</Link>
         </li>
         <li className="header__nav__item">
-          <Link href="/technology.html" activeClassName="active">03 Technology</Link>
+          <Link href="/technology.html" activeClassName="active">Technology</Link>
         </li>
       </ul>
     </header>

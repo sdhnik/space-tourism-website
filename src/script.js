@@ -1,5 +1,5 @@
 import { h, render } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import { useState } from 'preact/hooks';
 import Router from 'preact-router';
 
 import Home from './pages/Home';
@@ -10,17 +10,19 @@ import Technology from './pages/Technology';
 import './scss/style.scss';
 
 const Layout = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
   
-  useEffect(() => {
-    fetch('/data.json')
+  const handleRoute = () => {
+    if (!data) {
+      fetch('/data.json')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(() => setData({}));
-  }, []);
+    }
+  };
 
   return (
-    <Router>
+    <Router onChange={handleRoute}>
       <Home path="/" />
       <Destinations path="/destination.html" data={data?.destinations} />
       <Crew path="/crew.html" data={data?.crew} />

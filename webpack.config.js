@@ -27,10 +27,32 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpe?g|png)$/i,
+        use: ['file-loader', 'webp-loader?{quality: 90}'],
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              sourceMap: false,
+              url: false,
+            },
+          },
           "postcss-loader",
           "sass-loader",
         ],
