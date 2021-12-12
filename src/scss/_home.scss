@@ -1,9 +1,5 @@
 .home {
-  background: $home-mobile center center no-repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+  background-image: $home-mobile;
 
   @media(min-width: $tablet) {
     background-image: $home-tablet;

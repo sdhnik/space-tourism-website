@@ -18,7 +18,7 @@ const Header = () => {
         <span />
         <span />
       </button>
-      <ul className={`header__nav${open ? ` open` : ``}`}>
+      <ul className={`nav header__nav${open ? ` open` : ``}`}>
         <li className="header__nav__item">
           <Link href="/" activeClassName="active">Home</Link>
         </li>

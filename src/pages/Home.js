@@ -5,7 +5,7 @@ import { Link } from 'preact-router/match';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="wrapper home">
       <Header />
 
       <main className="content">

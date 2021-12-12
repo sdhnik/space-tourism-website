@@ -86,9 +86,7 @@
     @include position(fixed, 0 -254px 0 null);
 
     counter-reset: nav-number;
-    list-style: none;
     padding: 120px 0 120px 32px;
-    margin: 0;
     width: 254px;
     visibility: hidden;
     transform: translateX(0);
@@ -161,14 +159,7 @@
         position: relative;
         display: block;
         padding: 8px 0;
-        font-family: 'Barlow Condensed', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 120%;
         color: white;
-        letter-spacing: 2.7px;
-        white-space: nowrap;
-        text-transform: uppercase;
 
         @media (min-width: $tablet) {
           display: inline-block;

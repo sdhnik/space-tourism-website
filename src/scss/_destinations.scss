@@ -1,9 +1,5 @@
 .destinations {
-  background: $destination-mobile center center no-repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+  background-image: $destination-mobile;
 
   @media(min-width: $tablet) {
     background-image: $destination-tablet;
@@ -88,9 +84,7 @@
     &__nav {
       @include flex($justify: center);
 
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px;
+      margin-bottom: 20px;
 
       @media(min-width: $tablet) {
         margin-bottom: 32px;
@@ -105,14 +99,6 @@
         display: inline-block;
         padding: 0 0 8px;
         border-bottom: 3px solid transparent;
-        font-family: 'Barlow Condensed', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 120%;
-        color: white;
-        letter-spacing: 2.7px;
-        white-space: nowrap;
-        text-transform: uppercase;
         transition: border 0.3s ease;
         cursor: pointer;
 

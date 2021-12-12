@@ -34,7 +34,7 @@ const Destinations = props => {
   });
 
   return (
-    <div className="destinations">
+    <div className="wrapper destinations">
       <Header />
 
       <main className="content">
@@ -48,7 +48,7 @@ const Destinations = props => {
               </picture>
             </div>
             <div className="destinations__content__text">
-              <ul className="destinations__content__nav">
+              <ul className="nav destinations__content__nav">
                 {data?.map((item, index) => <li 
                   key={index} 
                   className={index === content.active ? 'active' : ''}

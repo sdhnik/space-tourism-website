@@ -1,9 +1,11 @@
-@import './variables';
-@import './mixins';
-@import './base';
+@import './variables',
+        './mixins',
+        './base';
 
-@import './header';
-@import './content';
+@import './header',
+        './content';
 
-@import './home';
-@import './destinations';
+@import './home',
+        './destinations',
+        './crew',
+        './technology';
