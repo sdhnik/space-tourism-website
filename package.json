@@ -4,6 +4,9 @@
   "description": "This project is to build out this multi-page space tourism website and get it looking as close to the design as possible.",
   "main": "index.html",
   "scripts": {
+    "init:gh-pages": "git clone --single-branch --branch gh-pages https://github.com/sdhnik/space-tourism-website.git public",
+    "clean:gh-pages": "rm -rf public/*",
+    "deploy": "webpack && cp -R dist/. public/",
     "start": "webpack-dev-server",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/sdhnik/space-tourism-website/issues"
   },
-  "homepage": "https://github.com/sdhnik/space-tourism-website#readme",
+  "homepage": "https://sdhnik.github.io/space-tourism-website",
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
