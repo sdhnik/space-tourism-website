@@ -6,9 +6,9 @@
   "scripts": {
     "init:gh-pages": "git clone --single-branch --branch gh-pages https://github.com/sdhnik/space-tourism-website.git public",
     "clean:gh-pages": "rm -rf public/*",
-    "deploy": "webpack && cp -R dist/. public/",
-    "start": "webpack-dev-server",
-    "build": "webpack",
+    "deploy": "webpack --config webpack.prod.js && cp -R dist/. public/",
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,7 +32,10 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^10.0.0",
     "css-loader": "^6.5.1",
+    "dotenv": "^10.0.0",
     "file-loader": "^6.2.0",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.5",
     "modern-normalize": "^1.1.0",
     "node-sass": "^6.0.1",
@@ -45,7 +48,8 @@
     "webp-loader": "^0.6.0",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
+    "webpack-dev-server": "^4.6.0",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "preact": "^10.6.2",

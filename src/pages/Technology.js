@@ -52,7 +52,7 @@ const Technology = props => {
                 >{index+1}</li>)}
               </ul>
               <div className="technology__content__info">
-                <div className="technology__content__info__subtitle">The terminology…</div>
+                <div className="technology__content__info__subtitle">The terminology...</div>
                 <h3>{content.name}</h3>
                 <p>{content.description}</p>
               </div>

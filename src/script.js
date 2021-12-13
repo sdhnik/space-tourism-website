@@ -14,7 +14,7 @@ const Layout = () => {
   
   const handleRoute = () => {
     if (!data) {
-      fetch('/data.json')
+      fetch(`${process.env.SITE_PREFIX}data.json`)
       .then(response => response.json())
       .then(data => setData(data))
       .catch(() => setData({}));
@@ -23,10 +23,10 @@ const Layout = () => {
 
   return (
     <Router onChange={handleRoute}>
-      <Home path="/" />
-      <Destinations path="/destination.html" data={data?.destinations} />
-      <Crew path="/crew.html" data={data?.crew} />
-      <Technology path="/technology.html" data={data?.technology} />
+      <Home path={process.env.SITE_PREFIX} />
+      <Destinations path={`${process.env.SITE_PREFIX}destination.html`} data={data?.destinations} />
+      <Crew path={`${process.env.SITE_PREFIX}crew.html`} data={data?.crew} />
+      <Technology path={`${process.env.SITE_PREFIX}technology.html`} data={data?.technology} />
     </Router>
   )
 }
