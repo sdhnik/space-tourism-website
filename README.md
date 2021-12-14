@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
+- Solution URL: [https://www.frontendmentor.io/solutions/space-tourism-website-solution-w52Mh7Y0g](https://www.frontendmentor.io/solutions/space-tourism-website-solution-w52Mh7Y0g)
 - Live Site URL: [https://sdhnik.github.io/space-tourism-website/](https://sdhnik.github.io/space-tourism-website/)
 
 ## My process
